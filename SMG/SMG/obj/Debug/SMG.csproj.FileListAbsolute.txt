@@ -1,0 +1,13 @@
+C:\Users\i.mctavish\Downloads\SMG\SMG\bin\Debug\SMG.exe.config
+C:\Users\i.mctavish\Downloads\SMG\SMG\bin\Debug\SMG.exe
+C:\Users\i.mctavish\Downloads\SMG\SMG\bin\Debug\SMG.pdb
+C:\Users\i.mctavish\Downloads\SMG\SMG\obj\Debug\SMG.csprojResolveAssemblyReference.cache
+C:\Users\i.mctavish\Downloads\SMG\SMG\obj\Debug\SMG.pauseScreen.resources
+C:\Users\i.mctavish\Downloads\SMG\SMG\obj\Debug\SMG.Properties.Resources.resources
+C:\Users\i.mctavish\Downloads\SMG\SMG\obj\Debug\SMG.startScreen.resources
+C:\Users\i.mctavish\Downloads\SMG\SMG\obj\Debug\SMG.csproj.GenerateResource.Cache
+C:\Users\i.mctavish\Downloads\SMG\SMG\obj\Debug\SMG.exe
+C:\Users\i.mctavish\Downloads\SMG\SMG\obj\Debug\SMG.pdb
+C:\Users\i.mctavish\OneDrive\Documents\__ics3c4c201617\SMG\SMG\bin\Debug\SMG.exe.config
+C:\Users\i.mctavish\OneDrive\Documents\__ics3c4c201617\SMG\SMG\obj\Debug\SMG.exe
+C:\Users\i.mctavish\OneDrive\Documents\__ics3c4c201617\SMG\SMG\obj\Debug\SMG.pdb
