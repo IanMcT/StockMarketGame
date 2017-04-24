@@ -34,10 +34,10 @@ namespace SMG
             this.btn_audio = new System.Windows.Forms.Button();
             this.btn_music = new System.Windows.Forms.Button();
             this.btn_musicStyle = new System.Windows.Forms.Button();
-            this.btn_language = new System.Windows.Forms.Button();
-            this.btn_english = new System.Windows.Forms.Button();
-            this.btn_japanese = new System.Windows.Forms.Button();
-            this.btn_leaderboard = new System.Windows.Forms.Button();
+            this.button7 = new System.Windows.Forms.Button();
+            this.button8 = new System.Windows.Forms.Button();
+            this.button9 = new System.Windows.Forms.Button();
+            this.button10 = new System.Windows.Forms.Button();
             this.btn_Quit = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.SuspendLayout();
@@ -71,6 +71,7 @@ namespace SMG
             this.btn_options.TabIndex = 2;
             this.btn_options.Text = "Options";
             this.btn_options.UseVisualStyleBackColor = true;
+            this.btn_options.Click += new System.EventHandler(this.btn_options_Click);
             // 
             // btn_audio
             // 
@@ -81,6 +82,7 @@ namespace SMG
             this.btn_audio.TabIndex = 3;
             this.btn_audio.Text = "Audio";
             this.btn_audio.UseVisualStyleBackColor = true;
+            this.btn_audio.Click += new System.EventHandler(this.btn_audio_Click);
             // 
             // btn_music
             // 
@@ -91,6 +93,7 @@ namespace SMG
             this.btn_music.TabIndex = 4;
             this.btn_music.Text = "Music On/Off";
             this.btn_music.UseVisualStyleBackColor = true;
+            this.btn_music.Click += new System.EventHandler(this.btn_music_Click);
             // 
             // btn_musicStyle
             // 
@@ -101,47 +104,50 @@ namespace SMG
             this.btn_musicStyle.TabIndex = 5;
             this.btn_musicStyle.Text = "Music Style";
             this.btn_musicStyle.UseVisualStyleBackColor = true;
+            this.btn_musicStyle.Click += new System.EventHandler(this.btn_musicStyle_Click);
             // 
-            // btn_language
+            // button7
             // 
-            this.btn_language.ForeColor = System.Drawing.SystemColors.Desktop;
-            this.btn_language.Location = new System.Drawing.Point(53, 199);
-            this.btn_language.Name = "btn_language";
-            this.btn_language.Size = new System.Drawing.Size(75, 23);
-            this.btn_language.TabIndex = 6;
-            this.btn_language.Tag = "";
-            this.btn_language.Text = "Language";
-            this.btn_language.UseVisualStyleBackColor = true;
+            this.button7.ForeColor = System.Drawing.SystemColors.Desktop;
+            this.button7.Location = new System.Drawing.Point(53, 199);
+            this.button7.Name = "button7";
+            this.button7.Size = new System.Drawing.Size(75, 23);
+            this.button7.TabIndex = 6;
+            this.button7.Text = "Language";
+            this.button7.UseVisualStyleBackColor = true;
+            this.button7.Click += new System.EventHandler(this.button7_Click);
             // 
-            // btn_english
+            // button8
             // 
-            this.btn_english.ForeColor = System.Drawing.SystemColors.Desktop;
-            this.btn_english.Location = new System.Drawing.Point(95, 228);
-            this.btn_english.Name = "btn_english";
-            this.btn_english.Size = new System.Drawing.Size(75, 23);
-            this.btn_english.TabIndex = 7;
-            this.btn_english.Text = "English";
-            this.btn_english.UseVisualStyleBackColor = true;
+            this.button8.ForeColor = System.Drawing.SystemColors.Desktop;
+            this.button8.Location = new System.Drawing.Point(95, 228);
+            this.button8.Name = "button8";
+            this.button8.Size = new System.Drawing.Size(75, 23);
+            this.button8.TabIndex = 7;
+            this.button8.Text = "English";
+            this.button8.UseVisualStyleBackColor = true;
+            this.button8.Click += new System.EventHandler(this.button8_Click);
             // 
-            // btn_japanese
+            // button9
             // 
-            this.btn_japanese.ForeColor = System.Drawing.SystemColors.Desktop;
-            this.btn_japanese.Location = new System.Drawing.Point(95, 257);
-            this.btn_japanese.Name = "btn_japanese";
-            this.btn_japanese.Size = new System.Drawing.Size(75, 23);
-            this.btn_japanese.TabIndex = 8;
-            this.btn_japanese.Text = "Japanese";
-            this.btn_japanese.UseVisualStyleBackColor = true;
+            this.button9.ForeColor = System.Drawing.SystemColors.Desktop;
+            this.button9.Location = new System.Drawing.Point(95, 257);
+            this.button9.Name = "button9";
+            this.button9.Size = new System.Drawing.Size(75, 23);
+            this.button9.TabIndex = 8;
+            this.button9.Text = "Japanese";
+            this.button9.UseVisualStyleBackColor = true;
+            this.button9.Click += new System.EventHandler(this.button9_Click);
             // 
-            // btn_leaderboard
+            // button10
             // 
-            this.btn_leaderboard.ForeColor = System.Drawing.SystemColors.Desktop;
-            this.btn_leaderboard.Location = new System.Drawing.Point(13, 309);
-            this.btn_leaderboard.Name = "btn_leaderboard";
-            this.btn_leaderboard.Size = new System.Drawing.Size(75, 23);
-            this.btn_leaderboard.TabIndex = 9;
-            this.btn_leaderboard.Text = "Leaderboards";
-            this.btn_leaderboard.UseVisualStyleBackColor = true;
+            this.button10.ForeColor = System.Drawing.SystemColors.Desktop;
+            this.button10.Location = new System.Drawing.Point(13, 309);
+            this.button10.Name = "button10";
+            this.button10.Size = new System.Drawing.Size(75, 23);
+            this.button10.TabIndex = 9;
+            this.button10.Text = "Leaderboards";
+            this.button10.UseVisualStyleBackColor = true;
             // 
             // btn_Quit
             // 
@@ -152,7 +158,6 @@ namespace SMG
             this.btn_Quit.TabIndex = 10;
             this.btn_Quit.Text = "Quit";
             this.btn_Quit.UseVisualStyleBackColor = true;
-            this.btn_Quit.Click += new System.EventHandler(this.btn_Quit_Click);
             // 
             // label1
             // 
@@ -172,10 +177,10 @@ namespace SMG
             this.ClientSize = new System.Drawing.Size(327, 345);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.btn_Quit);
-            this.Controls.Add(this.btn_leaderboard);
-            this.Controls.Add(this.btn_japanese);
-            this.Controls.Add(this.btn_english);
-            this.Controls.Add(this.btn_language);
+            this.Controls.Add(this.button10);
+            this.Controls.Add(this.button9);
+            this.Controls.Add(this.button8);
+            this.Controls.Add(this.button7);
             this.Controls.Add(this.btn_musicStyle);
             this.Controls.Add(this.btn_music);
             this.Controls.Add(this.btn_audio);
@@ -199,10 +204,10 @@ namespace SMG
         private System.Windows.Forms.Button btn_audio;
         private System.Windows.Forms.Button btn_music;
         private System.Windows.Forms.Button btn_musicStyle;
-        private System.Windows.Forms.Button btn_language;
-        private System.Windows.Forms.Button btn_english;
-        private System.Windows.Forms.Button btn_japanese;
-        private System.Windows.Forms.Button btn_leaderboard;
+        private System.Windows.Forms.Button button7;
+        private System.Windows.Forms.Button button8;
+        private System.Windows.Forms.Button button9;
+        private System.Windows.Forms.Button button10;
         private System.Windows.Forms.Button btn_Quit;
         private System.Windows.Forms.Label label1;
     }
