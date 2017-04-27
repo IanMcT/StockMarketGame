@@ -51,6 +51,7 @@ namespace SMG
             this.btnNewGame.TabIndex = 0;
             this.btnNewGame.Text = "Start";
             this.btnNewGame.UseVisualStyleBackColor = true;
+            this.btnNewGame.Click += new System.EventHandler(this.btnNewGame_Click);
             // 
             // btn_load
             // 
@@ -61,6 +62,7 @@ namespace SMG
             this.btn_load.TabIndex = 1;
             this.btn_load.Text = "Load Game";
             this.btn_load.UseVisualStyleBackColor = true;
+            this.btn_load.Click += new System.EventHandler(this.btn_load_Click);
             // 
             // btn_options
             // 
@@ -158,6 +160,7 @@ namespace SMG
             this.btn_Quit.TabIndex = 10;
             this.btn_Quit.Text = "Quit";
             this.btn_Quit.UseVisualStyleBackColor = true;
+            this.btn_Quit.Click += new System.EventHandler(this.btn_Quit_Click);
             // 
             // label1
             // 
