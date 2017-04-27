@@ -1,4 +1,4 @@
-﻿namespace SMG
+namespace SMG
 {
     partial class startScreen
     {
@@ -68,12 +68,13 @@
             // 
             this.Difficulty_Easy.BackColor = System.Drawing.Color.Gainsboro;
             this.Difficulty_Easy.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.Difficulty_Easy.Location = new System.Drawing.Point(177, 145);
+            this.Difficulty_Easy.Location = new System.Drawing.Point(175, 145);
             this.Difficulty_Easy.Name = "Difficulty_Easy";
             this.Difficulty_Easy.Size = new System.Drawing.Size(88, 39);
             this.Difficulty_Easy.TabIndex = 2;
             this.Difficulty_Easy.Text = "Easy";
             this.Difficulty_Easy.UseVisualStyleBackColor = false;
+            this.Difficulty_Easy.Click += new System.EventHandler(this.Difficulty_Easy_Click);
             // 
             // Difficulty_Medium
             // 
@@ -85,6 +86,7 @@
             this.Difficulty_Medium.TabIndex = 3;
             this.Difficulty_Medium.Text = "Medium";
             this.Difficulty_Medium.UseVisualStyleBackColor = false;
+            this.Difficulty_Medium.Click += new System.EventHandler(this.Difficulty_Medium_Click);
             // 
             // Difficulty_Hard
             // 
@@ -96,6 +98,7 @@
             this.Difficulty_Hard.TabIndex = 4;
             this.Difficulty_Hard.Text = "Hard";
             this.Difficulty_Hard.UseVisualStyleBackColor = false;
+            this.Difficulty_Hard.Click += new System.EventHandler(this.Difficulty_Hard_Click);
             // 
             // Difficulty_VeryHard
             // 
@@ -107,6 +110,7 @@
             this.Difficulty_VeryHard.TabIndex = 5;
             this.Difficulty_VeryHard.Text = "Very Hard";
             this.Difficulty_VeryHard.UseVisualStyleBackColor = false;
+            this.Difficulty_VeryHard.Click += new System.EventHandler(this.Difficulty_VeryHard_Click);
             // 
             // Length_Seven
             // 
@@ -118,6 +122,7 @@
             this.Length_Seven.TabIndex = 6;
             this.Length_Seven.Text = "7 Days";
             this.Length_Seven.UseVisualStyleBackColor = false;
+            this.Length_Seven.Click += new System.EventHandler(this.Length_Seven_Click);
             // 
             // Length_Fourteen
             // 
@@ -129,6 +134,7 @@
             this.Length_Fourteen.TabIndex = 7;
             this.Length_Fourteen.Text = "14 Days";
             this.Length_Fourteen.UseVisualStyleBackColor = false;
+            this.Length_Fourteen.Click += new System.EventHandler(this.Length_Fourteen_Click);
             // 
             // Length_Twentyone
             // 
@@ -140,6 +146,7 @@
             this.Length_Twentyone.TabIndex = 8;
             this.Length_Twentyone.Text = "21 Days";
             this.Length_Twentyone.UseVisualStyleBackColor = false;
+            this.Length_Twentyone.Click += new System.EventHandler(this.Length_Twentyone_Click);
             // 
             // Length_Endless
             // 
@@ -151,6 +158,7 @@
             this.Length_Endless.TabIndex = 9;
             this.Length_Endless.Text = "Endless";
             this.Length_Endless.UseVisualStyleBackColor = false;
+            this.Length_Endless.Click += new System.EventHandler(this.Length_Endless_Click);
             // 
             // Cancel_Game
             // 
@@ -162,6 +170,7 @@
             this.Cancel_Game.TabIndex = 10;
             this.Cancel_Game.Text = "Cancel";
             this.Cancel_Game.UseVisualStyleBackColor = false;
+            this.Cancel_Game.Click += new System.EventHandler(this.Cancel_Game_Click);
             // 
             // Start_Game
             // 
@@ -173,6 +182,7 @@
             this.Start_Game.TabIndex = 11;
             this.Start_Game.Text = "Start Game";
             this.Start_Game.UseVisualStyleBackColor = false;
+            this.Start_Game.Click += new System.EventHandler(this.Start_Game_Click);
             // 
             // startScreen
             // 
