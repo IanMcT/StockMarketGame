@@ -165,6 +165,18 @@ namespace SMG
 
         private void button9_Click(object sender, EventArgs e)
         {
+                    btnNewGame.Text = "開始";
+            btn_load.Text = "ロードゲーム";
+            btn_options.Text = "オプション";
+            btn_audio.Text = "オーディオ";
+            btn_music.Text = "音楽";
+            btn_musicStyle.Text = "音楽スタイル";
+            button7.Text = "言語";
+            button8.Text = "英語";
+            button9.Text = "日本語";
+            button10.Text ="リーダーボード";
+            btn_Quit.Text ="終了する";
+
             Console.WriteLine("Japanese was selected");
         }
 
