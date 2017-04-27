@@ -167,5 +167,41 @@ namespace SMG
         {
             Console.WriteLine("Japanese was selected");
         }
+
+        /// <summary>
+        /// Brandon McCutcheon
+        /// closes the program
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void btn_Quit_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        /// <summary>
+        /// Load Game
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void btn_load_Click(object sender, EventArgs e)
+        {
+
+        }
+        /// <summary>
+        /// Start new game
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void btnNewGame_Click(object sender, EventArgs e)
+        {
+            //code to open StartScreen Form
+            startScreen f = new startScreen();
+            DialogResult dr = f.ShowDialog();
+            if (dr == System.Windows.Forms.DialogResult.OK)
+            {
+                //code to handle if you come back to this.
+            }
+        }
     }
 }
