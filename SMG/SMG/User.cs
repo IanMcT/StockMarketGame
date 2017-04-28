@@ -1,14 +1,16 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.IO;
 
 namespace SMG
 {
     class User
     {
+        //variables specific to one user
         public string UserName;
         public double Balance;
         public int CurrentDay;
@@ -26,16 +28,26 @@ namespace SMG
             //this.OwnedStocks = new List<Stock>();
         }
 
+        /// <summary>
+        /// Creates a new instance of User from scratch.
+        /// </summary>
+        /// <param name="UserName">The username of the user.</param>
+        /// <param name="TotalDays">The total days of the user.</param>
+        /// <returns>The instance of User</returns>
         public static User CreateNewUser(string UserName, int TotalDays)
         {
             return new User(UserName, 0.0, 0, TotalDays, "");
         }
 
+        /// <summary>
+        /// Creates a new instance of User from a user info file.
+        /// </summary>
+        /// <returns>The instance of User</returns>
         public static User LoadUserFromFile()
         {
             User result = new User("", 0.0, 0, 0, "");
             OpenFileDialog fileDialog = new OpenFileDialog();
-            System.IO.StreamReader file = null;
+            StreamReader file = null;
 
             int counter = 0;
             string line = "";
@@ -44,39 +56,44 @@ namespace SMG
             string[] ownedStockNames = new string[0];
             int[] ownedStockAmounts = new int[0];
 
-            if (fileDialog.ShowDialog() == System.Windows.Forms.DialogResult.OK)
+            if (fileDialog.ShowDialog() == DialogResult.OK)
             {
-                file = new System.IO.StreamReader(fileDialog.FileName);
+                file = new StreamReader(fileDialog.FileName);
             }
-
+			//reads throught the file
             while ((line = file.ReadLine()) != null)
             {
-                switch (counter)
+				//first 5 lines are user information
+                if (counter <= 5)
                 {
-                    case 0:
-                        result.UserName = line;
-                        break;
-                    case 1:
-                        result.Balance = double.Parse(line);
-                        break;
-                    case 2:
-                        result.CurrentDay = int.Parse(line);
-                        break;
-                    case 3:
-                        result.TotalDays = int.Parse(line);
-                        break;
-                    case 4:
-                        result.StockFilePath = line;
-                        break;
-                    case 5:
-                        ownedStockNumber = int.Parse(line);
-                        ownedStockNames = new string[ownedStockNumber];
-                        ownedStockAmounts = new int[ownedStockNumber];
-                        break;
-                    default:
-                        break;
+                    switch (counter)
+                    {
+                        case 0:
+                            result.UserName = line;
+                            break;
+                        case 1:
+                            result.Balance = double.Parse(line);
+                            break;
+                        case 2:
+                            result.CurrentDay = int.Parse(line);
+                            break;
+                        case 3:
+                            result.TotalDays = int.Parse(line);
+                            break;
+                        case 4:
+                            result.StockFilePath = line;
+                            break;
+                        case 5:
+                            ownedStockNumber = int.Parse(line);
+                            ownedStockNames = new string[ownedStockNumber];
+                            ownedStockAmounts = new int[ownedStockNumber];
+                            break;
+                        default:
+                            break;
+                    }
                 }
-
+				
+				//after 5 lines user stock information
                 if (counter > 5 && counter < 5 + ownedStockNumber + 1)
                 {
                     ownedStockNames[counter - 6] = line;
@@ -92,7 +109,7 @@ namespace SMG
             //List<Stock> stocks = new List<Stock>();
             for (int i = 0; i < ownedStockNumber; i++)
             {
-                //stocks.Add(new stock using data about name and number);
+                //stocks.Add(new stock based on ownedStockNames[i] and ownedStockAmounts[i]);
             }
             //result.OwnedStocks = stocks;
 
