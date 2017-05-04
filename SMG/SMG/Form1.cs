@@ -48,6 +48,7 @@ namespace SMG
             button7.Visible = false;
             button8.Visible = false;
             button9.Visible = false;
+            this.ControlBox = false;
         }
 
         /// <summary>
@@ -160,7 +161,17 @@ namespace SMG
 
         private void button8_Click(object sender, EventArgs e)
         {
-            Console.WriteLine("English was selected");
+            btnNewGame.Text = "Start";
+            btn_load.Text = "Load Game";
+            btn_options.Text = "Options";
+            btn_audio.Text = "Audio";
+            btn_music.Text = "Music";
+            btn_musicStyle.Text = "Music Style";
+            button7.Text = "Language";
+            button8.Text = "English";
+            button9.Text = "Japanese";
+            button10.Text = "Leaderboard";
+            btn_Quit.Text = "Quit";
         }
 
         private void button9_Click(object sender, EventArgs e)
@@ -176,8 +187,6 @@ namespace SMG
             button9.Text = "日本語";
             button10.Text ="リーダーボード";
             btn_Quit.Text ="終了する";
-
-            Console.WriteLine("Japanese was selected");
         }
 
         /// <summary>
@@ -189,6 +198,7 @@ namespace SMG
         private void btn_Quit_Click(object sender, EventArgs e)
         {
             this.Close();
+            Application.Exit();
         }
 
         /// <summary>
@@ -209,6 +219,7 @@ namespace SMG
         {
             //code to open StartScreen Form
             startScreen f = new startScreen();
+            this.Close();
             DialogResult dr = f.ShowDialog();
             if (dr == System.Windows.Forms.DialogResult.OK)
             {
