@@ -68,7 +68,7 @@ namespace SMG
             // 
             this.Difficulty_Easy.BackColor = System.Drawing.Color.Gainsboro;
             this.Difficulty_Easy.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.Difficulty_Easy.Location = new System.Drawing.Point(175, 145);
+            this.Difficulty_Easy.Location = new System.Drawing.Point(177, 145);
             this.Difficulty_Easy.Name = "Difficulty_Easy";
             this.Difficulty_Easy.Size = new System.Drawing.Size(88, 39);
             this.Difficulty_Easy.TabIndex = 2;
@@ -190,6 +190,7 @@ namespace SMG
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.DimGray;
             this.ClientSize = new System.Drawing.Size(711, 416);
+            this.ControlBox = false;
             this.Controls.Add(this.Start_Game);
             this.Controls.Add(this.Cancel_Game);
             this.Controls.Add(this.Length_Endless);
@@ -204,6 +205,7 @@ namespace SMG
             this.Controls.Add(this.Difficulty_of_Game);
             this.Name = "startScreen";
             this.Text = "startScreen";
+            this.Load += new System.EventHandler(this.startScreen_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
