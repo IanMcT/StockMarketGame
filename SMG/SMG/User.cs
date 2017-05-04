@@ -16,8 +16,16 @@ namespace SMG
         public int CurrentDay;
         public int TotalDays;
         public string StockFilePath;
-        //public List<Stock> OwnedStocks;
+        public List<Stock> OwnedStocks;
 
+        /// <summary>
+        /// Instantiates a user
+        /// </summary>
+        /// <param name="UserName">The username</param>
+        /// <param name="Balance">The current balance</param>
+        /// <param name="CurrentDay">The current day</param>
+        /// <param name="TotalDays">The total days</param>
+        /// <param name="StockFilePath">The file path to the stock info file</param>
         private User(string UserName, double Balance, int CurrentDay, int TotalDays, string StockFilePath)
         {
             this.UserName = UserName;
@@ -25,7 +33,7 @@ namespace SMG
             this.CurrentDay = CurrentDay;
             this.TotalDays = TotalDays;
             this.StockFilePath = StockFilePath;
-            //this.OwnedStocks = new List<Stock>();
+            this.OwnedStocks = new List<Stock>();
         }
 
         /// <summary>
@@ -106,12 +114,13 @@ namespace SMG
                 counter++;
             }
 
-            //List<Stock> stocks = new List<Stock>();
+            //create list of stocks based on fetched stock names
+            List<Stock> stocks = new List<Stock>();
             for (int i = 0; i < ownedStockNumber; i++)
             {
-                //stocks.Add(new stock based on ownedStockNames[i] and ownedStockAmounts[i]);
+                stocks.Add(new Stock(ownedStockNames[i]));
             }
-            //result.OwnedStocks = stocks;
+            result.OwnedStocks = stocks;
 
             file.Close();
             return result;
