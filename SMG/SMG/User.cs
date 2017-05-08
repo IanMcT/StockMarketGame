@@ -118,7 +118,7 @@ namespace SMG
             List<Stock> stocks = new List<Stock>();
             for (int i = 0; i < ownedStockNumber; i++)
             {
-                stocks.Add(new Stock(ownedStockNames[i]));
+                //stocks.Add(new Stock(ownedStockNames[i]));
             }
             result.OwnedStocks = stocks;
 
