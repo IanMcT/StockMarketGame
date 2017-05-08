@@ -1,4 +1,4 @@
-﻿namespace smg
+namespace SMG
 {
     partial class stockMarketScreen
     {
@@ -40,6 +40,7 @@
             this.OwnedPriceChange = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panelGraph = new System.Windows.Forms.Panel();
             this.panelInfo = new System.Windows.Forms.Panel();
+            this.tbStockInfo = new System.Windows.Forms.TextBox();
             this.btnSellStocks = new System.Windows.Forms.Button();
             this.btnBuyStocks = new System.Windows.Forms.Button();
             this.tbStockProfit = new System.Windows.Forms.TextBox();
@@ -58,7 +59,6 @@
             this.label10 = new System.Windows.Forms.Label();
             this.tbBalance = new System.Windows.Forms.TextBox();
             this.tbDays = new System.Windows.Forms.TextBox();
-            this.tbStockInfo = new System.Windows.Forms.TextBox();
             this.panelStocks.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvStockList)).BeginInit();
             this.panelOwned.SuspendLayout();
@@ -76,15 +76,20 @@
             // 
             // dgvStockList
             // 
+            this.dgvStockList.AllowUserToAddRows = false;
+            this.dgvStockList.AllowUserToDeleteRows = false;
+            this.dgvStockList.AllowUserToResizeColumns = false;
             this.dgvStockList.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvStockList.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Stock,
             this.Cost,
             this.priceChange});
+            this.dgvStockList.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
             this.dgvStockList.Location = new System.Drawing.Point(3, 3);
             this.dgvStockList.Name = "dgvStockList";
             this.dgvStockList.Size = new System.Drawing.Size(387, 216);
             this.dgvStockList.TabIndex = 0;
+            this.dgvStockList.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvStockList_CellContentClick);
             // 
             // Stock
             // 
@@ -161,6 +166,13 @@
             this.panelInfo.Name = "panelInfo";
             this.panelInfo.Size = new System.Drawing.Size(432, 232);
             this.panelInfo.TabIndex = 3;
+            // 
+            // tbStockInfo
+            // 
+            this.tbStockInfo.Location = new System.Drawing.Point(58, 4);
+            this.tbStockInfo.Name = "tbStockInfo";
+            this.tbStockInfo.Size = new System.Drawing.Size(310, 20);
+            this.tbStockInfo.TabIndex = 10;
             // 
             // btnSellStocks
             // 
@@ -250,7 +262,6 @@
             this.label5.Size = new System.Drawing.Size(53, 16);
             this.label5.TabIndex = 0;
             this.label5.Text = "Owned:";
-            this.label5.Click += new System.EventHandler(this.label5_Click);
             // 
             // label1
             // 
@@ -328,13 +339,6 @@
             this.tbDays.Size = new System.Drawing.Size(100, 20);
             this.tbDays.TabIndex = 10;
             // 
-            // tbStockInfo
-            // 
-            this.tbStockInfo.Location = new System.Drawing.Point(58, 4);
-            this.tbStockInfo.Name = "tbStockInfo";
-            this.tbStockInfo.Size = new System.Drawing.Size(310, 20);
-            this.tbStockInfo.TabIndex = 10;
-            // 
             // stockMarketScreen
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -355,6 +359,7 @@
             this.Controls.Add(this.panelStocks);
             this.Name = "stockMarketScreen";
             this.Text = "stockMarketScreen";
+            this.Load += new System.EventHandler(this.stockMarketScreen_Load);
             this.panelStocks.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvStockList)).EndInit();
             this.panelOwned.ResumeLayout(false);
