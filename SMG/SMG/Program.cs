@@ -9,7 +9,7 @@ namespace SMG
     static class Program
     {
         public static User user;
-        public static User difficulty;
+        public static double difficulty = 1000.00;
         /// <summary>
         /// The main entry point for the application.
         /// </summary>
