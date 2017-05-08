@@ -29,9 +29,13 @@ namespace SMG
         /// </summary>
         public double StockReturn;
 
-        public Stock(string StockName)
+        public Stock(string sn, string sd, double sh, double sri, double sre)
         {
-            this.StockName = StockName;
+            this.StockName = sn;
+            this.StockDescription = sd;
+            this.StockHistory = sh;
+            this.StockRisk = sri;
+            this.StockReturn = sre;
         }
     }
 }
