@@ -12,8 +12,8 @@ namespace SMG
 {
     public partial class startScreen : Form
     {
-        int numberOfDays = 0;
-        double difficulty = 0;
+        int numberOfDays = 7;
+        
 
         public startScreen()
         {
@@ -23,8 +23,18 @@ namespace SMG
         private void Start_Game_Click(object sender, EventArgs e)
         {
             Program.user = User.CreateNewUser("blank username", numberOfDays);
+            Program.user.Balance = Program.difficulty;
+            Program.user.CurrentDay = 0;
+            Program.user.TotalDays = numberOfDays;
             //MessageBox.Show(Program.user.Balance.ToString() + "\n" + Program.user.ToString());
-
+            //code to open StartScreen Form
+            stockMarketScreen f = new stockMarketScreen();
+            this.Close();
+            DialogResult dr = f.ShowDialog();
+            if (dr == System.Windows.Forms.DialogResult.OK)
+            {
+                //code to handle if you come back to this.
+            }
         }
 
         private void Length_Seven_Click(object sender, EventArgs e)
@@ -49,22 +59,22 @@ namespace SMG
 
         private void Difficulty_Easy_Click(object sender, EventArgs e)
         {
-            difficulty = 1000.00;
+            Program.difficulty = 1000.00;
         }
 
         private void Difficulty_Medium_Click(object sender, EventArgs e)
         {
-            difficulty = 750.00;
+            Program.difficulty = 750.00;
         }
 
         private void Difficulty_Hard_Click(object sender, EventArgs e)
         {
-            difficulty = 500.00;
+            Program.difficulty = 500.00;
         }
 
         private void Difficulty_VeryHard_Click(object sender, EventArgs e)
         {
-            difficulty = 250.00;
+            Program.difficulty = 250.00;
         }
 
         private void Cancel_Game_Click(object sender, EventArgs e)
