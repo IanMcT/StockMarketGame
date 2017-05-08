@@ -30,17 +30,25 @@ namespace SMG
         private void stockMarketScreen_Load(object sender, EventArgs e)
         {
             //load stocks
-            stocks.Add(new Stock("Guugle"));
-            stocks.Add(new Stock("Pear"));
-            stocks.Add(new Stock("Skybucks"));
+            stocks.Add(new Stock("Guugle","Search swamps", new List<double>(),10.0,90.0));
+            stocks.Add(new Stock("Pear","fruity computers", new List<double>(), 12.0,95.0));
+            stocks.Add(new Stock("Skybucks","java time!", new List<double>(), 50,50));
             //adds rows
             int currentRow = 0;
             foreach (Stock s in stocks)
             {
+                Console.WriteLine(s.ToString());
                 dgvStockList.Rows.Add();
                 dgvStockList.Rows[currentRow].Cells[0].Value = s.StockName;
                 dgvStockList.Rows[currentRow].Cells[1].Value = s.StockReturn;
-                dgvStockList.Rows[currentRow].Cells[2].Value = bmpUp;
+                if (s.isStockUp())
+                {
+                    dgvStockList.Rows[currentRow].Cells[2].Value = bmpUp;
+                }
+                else 
+                {
+                    dgvStockList.Rows[currentRow].Cells[2].Value = bmpDown;
+                }
                 currentRow++;
             }
         }
