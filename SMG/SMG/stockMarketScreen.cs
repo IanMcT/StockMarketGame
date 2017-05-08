@@ -10,7 +10,7 @@ using System.Windows.Forms;
 
 namespace SMG
 {
-    
+
     public partial class stockMarketScreen : Form
     {
         //Global Variables
@@ -30,11 +30,19 @@ namespace SMG
         private void stockMarketScreen_Load(object sender, EventArgs e)
         {
             //load stocks
-            //adds a row
-            dgvStockList.Rows.Add();
-            dgvStockList.Rows[dgvStockList.RowCount - 1].Cells[0].Value = "Google";
-            dgvStockList.Rows[dgvStockList.RowCount - 1].Cells[1].Value = 99.98;
-            dgvStockList.Rows[dgvStockList.RowCount - 1].Cells[2].Value = bmpUp;
+            stocks.Add(new Stock("Guugle"));
+            stocks.Add(new Stock("Pear"));
+            stocks.Add(new Stock("Skybucks"));
+            //adds rows
+            int currentRow = 0;
+            foreach (Stock s in stocks)
+            {
+                dgvStockList.Rows.Add();
+                dgvStockList.Rows[currentRow].Cells[0].Value = s.StockName;
+                dgvStockList.Rows[currentRow].Cells[1].Value = s.StockReturn;
+                dgvStockList.Rows[currentRow].Cells[2].Value = bmpUp;
+                currentRow++;
+            }
         }
 
         /// <summary>
@@ -45,7 +53,7 @@ namespace SMG
         private void dgvStockList_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
             //is a row clicked?
-            if (e.RowIndex >= 0 && e.RowIndex < dgvStockList.RowCount) 
+            if (e.RowIndex >= 0 && e.RowIndex < dgvStockList.RowCount)
             {
                 MessageBox.Show("You clicked " +
                     dgvStockList.Rows[e.RowIndex].Cells[0].Value);
