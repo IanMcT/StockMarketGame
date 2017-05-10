@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace SMG
 {
-    class Stock
+    public class Stock
     {
         static Random r = new Random();
         /// <summary>
