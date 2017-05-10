@@ -67,6 +67,52 @@ namespace SMG
                     dgvStockList.Rows[e.RowIndex].Cells[0].Value);
             }
         }
+
+        /// <summary>
+        /// Handle cell clicks
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void dgvStockList_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            //Don't change
+            dgvStockList_CellContentClick(sender, e);
+        }
+
+        /// <summary>
+        /// Runs when you double click the stock
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void dgvStockList_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            //is a row double-clicked?
+            if (e.RowIndex >= 0 && e.RowIndex < dgvStockList.RowCount)
+            {
+                MessageBox.Show("You double clicked " +
+                    dgvStockList.Rows[e.RowIndex].Cells[0].Value);
+            }
+        }
+
+        /// <summary>
+        /// Owned stocks click event
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void dgvOwnedStocks_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        /// <summary>
+        /// End turn button
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void btnEndTurn_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
 
