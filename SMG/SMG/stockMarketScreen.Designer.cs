@@ -40,6 +40,7 @@ namespace SMG
             this.OwnedPriceChange = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panelGraph = new System.Windows.Forms.Panel();
             this.panelInfo = new System.Windows.Forms.Panel();
+            this.richTextBox1 = new System.Windows.Forms.RichTextBox();
             this.btnEndTurn = new System.Windows.Forms.Button();
             this.lblTutorialText = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
@@ -50,7 +51,6 @@ namespace SMG
             this.label10 = new System.Windows.Forms.Label();
             this.tbBalance = new System.Windows.Forms.TextBox();
             this.tbDays = new System.Windows.Forms.TextBox();
-            this.richTextBox1 = new System.Windows.Forms.RichTextBox();
             this.panelStocks.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvStockList)).BeginInit();
             this.panelOwned.SuspendLayout();
@@ -81,7 +81,9 @@ namespace SMG
             this.dgvStockList.Name = "dgvStockList";
             this.dgvStockList.Size = new System.Drawing.Size(387, 216);
             this.dgvStockList.TabIndex = 0;
+            this.dgvStockList.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvStockList_CellClick);
             this.dgvStockList.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvStockList_CellContentClick);
+            this.dgvStockList.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvStockList_CellDoubleClick);
             // 
             // Stock
             // 
@@ -117,6 +119,7 @@ namespace SMG
             this.dgvOwnedStocks.Name = "dgvOwnedStocks";
             this.dgvOwnedStocks.Size = new System.Drawing.Size(387, 230);
             this.dgvOwnedStocks.TabIndex = 0;
+            this.dgvOwnedStocks.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvOwnedStocks_CellClick);
             // 
             // OwnedStock
             // 
@@ -151,6 +154,18 @@ namespace SMG
             this.panelInfo.Size = new System.Drawing.Size(432, 232);
             this.panelInfo.TabIndex = 3;
             // 
+            // richTextBox1
+            // 
+            this.richTextBox1.BackColor = System.Drawing.Color.DimGray;
+            this.richTextBox1.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.richTextBox1.Enabled = false;
+            this.richTextBox1.Location = new System.Drawing.Point(22, 43);
+            this.richTextBox1.Name = "richTextBox1";
+            this.richTextBox1.Size = new System.Drawing.Size(394, 102);
+            this.richTextBox1.TabIndex = 9;
+            this.richTextBox1.Text = "To look at a stock graph, click on a stock once to change the graph, to buy/sell " +
+    "stocks, double click on a stock to bring up the buy/sell menu.";
+            // 
             // btnEndTurn
             // 
             this.btnEndTurn.Location = new System.Drawing.Point(58, 183);
@@ -159,6 +174,7 @@ namespace SMG
             this.btnEndTurn.TabIndex = 8;
             this.btnEndTurn.Text = "End Turn";
             this.btnEndTurn.UseVisualStyleBackColor = true;
+            this.btnEndTurn.Click += new System.EventHandler(this.btnEndTurn_Click);
             // 
             // lblTutorialText
             // 
@@ -244,18 +260,6 @@ namespace SMG
             this.tbDays.ReadOnly = true;
             this.tbDays.Size = new System.Drawing.Size(100, 20);
             this.tbDays.TabIndex = 10;
-            // 
-            // richTextBox1
-            // 
-            this.richTextBox1.BackColor = System.Drawing.Color.DimGray;
-            this.richTextBox1.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.richTextBox1.Enabled = false;
-            this.richTextBox1.Location = new System.Drawing.Point(22, 43);
-            this.richTextBox1.Name = "richTextBox1";
-            this.richTextBox1.Size = new System.Drawing.Size(394, 102);
-            this.richTextBox1.TabIndex = 9;
-            this.richTextBox1.Text = "To look at a stock graph, click on a stock once to change the graph, to buy/sell " +
-    "stocks, double click on a stock to bring up the buy/sell menu.";
             // 
             // stockMarketScreen
             // 
