@@ -40,17 +40,8 @@ namespace SMG
             this.OwnedPriceChange = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panelGraph = new System.Windows.Forms.Panel();
             this.panelInfo = new System.Windows.Forms.Panel();
-            this.tbStockInfo = new System.Windows.Forms.TextBox();
-            this.btnSellStocks = new System.Windows.Forms.Button();
-            this.btnBuyStocks = new System.Windows.Forms.Button();
-            this.tbStockProfit = new System.Windows.Forms.TextBox();
-            this.tbSellQuantity = new System.Windows.Forms.TextBox();
-            this.tbStocksValue = new System.Windows.Forms.TextBox();
-            this.tbOwnedStocks = new System.Windows.Forms.TextBox();
-            this.label8 = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
+            this.btnEndTurn = new System.Windows.Forms.Button();
+            this.lblTutorialText = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -59,6 +50,7 @@ namespace SMG
             this.label10 = new System.Windows.Forms.Label();
             this.tbBalance = new System.Windows.Forms.TextBox();
             this.tbDays = new System.Windows.Forms.TextBox();
+            this.richTextBox1 = new System.Windows.Forms.RichTextBox();
             this.panelStocks.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvStockList)).BeginInit();
             this.panelOwned.SuspendLayout();
@@ -151,117 +143,31 @@ namespace SMG
             // 
             // panelInfo
             // 
-            this.panelInfo.Controls.Add(this.tbStockInfo);
-            this.panelInfo.Controls.Add(this.btnSellStocks);
-            this.panelInfo.Controls.Add(this.btnBuyStocks);
-            this.panelInfo.Controls.Add(this.tbStockProfit);
-            this.panelInfo.Controls.Add(this.tbSellQuantity);
-            this.panelInfo.Controls.Add(this.tbStocksValue);
-            this.panelInfo.Controls.Add(this.tbOwnedStocks);
-            this.panelInfo.Controls.Add(this.label8);
-            this.panelInfo.Controls.Add(this.label7);
-            this.panelInfo.Controls.Add(this.label6);
-            this.panelInfo.Controls.Add(this.label5);
+            this.panelInfo.Controls.Add(this.richTextBox1);
+            this.panelInfo.Controls.Add(this.btnEndTurn);
+            this.panelInfo.Controls.Add(this.lblTutorialText);
             this.panelInfo.Location = new System.Drawing.Point(472, 285);
             this.panelInfo.Name = "panelInfo";
             this.panelInfo.Size = new System.Drawing.Size(432, 232);
             this.panelInfo.TabIndex = 3;
             // 
-            // tbStockInfo
+            // btnEndTurn
             // 
-            this.tbStockInfo.Location = new System.Drawing.Point(58, 4);
-            this.tbStockInfo.Name = "tbStockInfo";
-            this.tbStockInfo.Size = new System.Drawing.Size(310, 20);
-            this.tbStockInfo.TabIndex = 10;
+            this.btnEndTurn.Location = new System.Drawing.Point(58, 183);
+            this.btnEndTurn.Name = "btnEndTurn";
+            this.btnEndTurn.Size = new System.Drawing.Size(319, 37);
+            this.btnEndTurn.TabIndex = 8;
+            this.btnEndTurn.Text = "End Turn";
+            this.btnEndTurn.UseVisualStyleBackColor = true;
             // 
-            // btnSellStocks
+            // lblTutorialText
             // 
-            this.btnSellStocks.Location = new System.Drawing.Point(268, 192);
-            this.btnSellStocks.Name = "btnSellStocks";
-            this.btnSellStocks.Size = new System.Drawing.Size(100, 37);
-            this.btnSellStocks.TabIndex = 9;
-            this.btnSellStocks.Text = "Sell";
-            this.btnSellStocks.UseVisualStyleBackColor = true;
-            // 
-            // btnBuyStocks
-            // 
-            this.btnBuyStocks.Location = new System.Drawing.Point(58, 192);
-            this.btnBuyStocks.Name = "btnBuyStocks";
-            this.btnBuyStocks.Size = new System.Drawing.Size(100, 37);
-            this.btnBuyStocks.TabIndex = 8;
-            this.btnBuyStocks.Text = "Buy";
-            this.btnBuyStocks.UseVisualStyleBackColor = true;
-            // 
-            // tbStockProfit
-            // 
-            this.tbStockProfit.Location = new System.Drawing.Point(268, 155);
-            this.tbStockProfit.Name = "tbStockProfit";
-            this.tbStockProfit.ReadOnly = true;
-            this.tbStockProfit.Size = new System.Drawing.Size(100, 20);
-            this.tbStockProfit.TabIndex = 7;
-            // 
-            // tbSellQuantity
-            // 
-            this.tbSellQuantity.Location = new System.Drawing.Point(58, 155);
-            this.tbSellQuantity.Name = "tbSellQuantity";
-            this.tbSellQuantity.Size = new System.Drawing.Size(100, 20);
-            this.tbSellQuantity.TabIndex = 6;
-            // 
-            // tbStocksValue
-            // 
-            this.tbStocksValue.Location = new System.Drawing.Point(268, 88);
-            this.tbStocksValue.Name = "tbStocksValue";
-            this.tbStocksValue.ReadOnly = true;
-            this.tbStocksValue.Size = new System.Drawing.Size(100, 20);
-            this.tbStocksValue.TabIndex = 5;
-            // 
-            // tbOwnedStocks
-            // 
-            this.tbOwnedStocks.Location = new System.Drawing.Point(58, 88);
-            this.tbOwnedStocks.Name = "tbOwnedStocks";
-            this.tbOwnedStocks.ReadOnly = true;
-            this.tbOwnedStocks.Size = new System.Drawing.Size(100, 20);
-            this.tbOwnedStocks.TabIndex = 4;
-            // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(266, 126);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(41, 16);
-            this.label8.TabIndex = 3;
-            this.label8.Text = "Profit:";
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(55, 126);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(85, 16);
-            this.label7.TabIndex = 2;
-            this.label7.Text = "Sell Quantity:";
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(265, 61);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(46, 16);
-            this.label6.TabIndex = 1;
-            this.label6.Text = "Value:";
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(55, 61);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(53, 16);
-            this.label5.TabIndex = 0;
-            this.label5.Text = "Owned:";
+            this.lblTutorialText.AutoSize = true;
+            this.lblTutorialText.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTutorialText.Location = new System.Drawing.Point(19, 12);
+            this.lblTutorialText.Name = "lblTutorialText";
+            this.lblTutorialText.Size = new System.Drawing.Size(0, 16);
+            this.lblTutorialText.TabIndex = 0;
             // 
             // label1
             // 
@@ -339,6 +245,18 @@ namespace SMG
             this.tbDays.Size = new System.Drawing.Size(100, 20);
             this.tbDays.TabIndex = 10;
             // 
+            // richTextBox1
+            // 
+            this.richTextBox1.BackColor = System.Drawing.Color.DimGray;
+            this.richTextBox1.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.richTextBox1.Enabled = false;
+            this.richTextBox1.Location = new System.Drawing.Point(22, 43);
+            this.richTextBox1.Name = "richTextBox1";
+            this.richTextBox1.Size = new System.Drawing.Size(394, 102);
+            this.richTextBox1.TabIndex = 9;
+            this.richTextBox1.Text = "To look at a stock graph, click on a stock once to change the graph, to buy/sell " +
+    "stocks, double click on a stock to bring up the buy/sell menu.";
+            // 
             // stockMarketScreen
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -389,20 +307,12 @@ namespace SMG
         private System.Windows.Forms.DataGridViewTextBoxColumn OwnedStock;
         private System.Windows.Forms.DataGridViewTextBoxColumn OwnedCost;
         private System.Windows.Forms.DataGridViewTextBoxColumn OwnedPriceChange;
-        private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label lblTutorialText;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.TextBox tbStockProfit;
-        private System.Windows.Forms.TextBox tbSellQuantity;
-        private System.Windows.Forms.TextBox tbStocksValue;
-        private System.Windows.Forms.TextBox tbOwnedStocks;
         private System.Windows.Forms.TextBox tbBalance;
         private System.Windows.Forms.TextBox tbDays;
-        private System.Windows.Forms.Button btnSellStocks;
-        private System.Windows.Forms.Button btnBuyStocks;
-        private System.Windows.Forms.TextBox tbStockInfo;
+        private System.Windows.Forms.Button btnEndTurn;
+        private System.Windows.Forms.RichTextBox richTextBox1;
     }
 }
