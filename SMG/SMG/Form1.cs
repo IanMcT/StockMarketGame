@@ -229,3 +229,21 @@ namespace SMG
         }
     }
 }
+
+/*
+private void panel1_Paint(object sender, PaintEventArgs e)
+        {
+            //MessageBox.Show(panel1.Width.ToString() + ", " + panel1.Height.ToString());
+            float width = panel1.Width;
+            float height = panel1.Height;
+
+            e.Graphics.DrawLine(Pens.Black,panel1.Width,145.0f,0.0f,145.0f);
+            e.Graphics.DrawLine(Pens.Black, panel1.Width, 65.0f, 0.0f, 65.0f);
+            e.Graphics.DrawLine(Pens.Black, panel1.Width, 220.0f, 0.0f, 220.0f);
+            e.Graphics.DrawLine(Pens.Red, width, width/7, height/6, height);
+           
+         
+         
+
+        }
+*/
