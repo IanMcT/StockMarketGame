@@ -16,7 +16,7 @@ namespace SMG
         public int CurrentDay;
         public int TotalDays;
         public string StockFilePath;
-        public List<Stock> OwnedStocks;
+        public Dictionary<string, int> OwnedStocks;
 
         /// <summary>
         /// Instantiates a user
@@ -33,7 +33,7 @@ namespace SMG
             this.CurrentDay = CurrentDay;
             this.TotalDays = TotalDays;
             this.StockFilePath = StockFilePath;
-            this.OwnedStocks = new List<Stock>();
+            this.OwnedStocks = new Dictionary<string, int>();
         }
 
         /// <summary>
@@ -115,15 +115,32 @@ namespace SMG
             }
 
             //create list of stocks based on fetched stock names
-            List<Stock> stocks = new List<Stock>();
+            Dictionary<string, int> stocks = new Dictionary<string, int>();
             for (int i = 0; i < ownedStockNumber; i++)
             {
-                //stocks.Add(new Stock(ownedStockNames[i]));
+                stocks.Add(ownedStockNames[i], ownedStockAmounts[i]);
             }
             result.OwnedStocks = stocks;
 
             file.Close();
             return result;
+        }
+
+        /// <summary>
+        /// Asks whether or not the user owns a certain stock
+        /// </summary>
+        /// <param name="stockName">The name of the stock to ask about</param>
+        /// <returns>Whether or not they own it</returns>
+        public bool OwnsStock(String stockName)
+        {
+            foreach (string s in OwnedStocks.Keys)
+            {
+                if (s.Equals(stockName))
+                {
+                    return true;
+                }
+            }
+            return false;
         }
     }
 }
