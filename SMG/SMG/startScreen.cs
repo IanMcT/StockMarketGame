@@ -28,9 +28,9 @@ namespace SMG
             Program.user.TotalDays = numberOfDays;
             //MessageBox.Show(Program.user.Balance.ToString() + "\n" + Program.user.ToString());
             //code to open StartScreen Form
-            stockMarketScreen f = new stockMarketScreen();
+            Program.smScreen = new stockMarketScreen();
             this.Close();
-            DialogResult dr = f.ShowDialog();
+            DialogResult dr = Program.smScreen.ShowDialog();
             if (dr == System.Windows.Forms.DialogResult.OK)
             {
                 //code to handle if you come back to this.
