@@ -10,6 +10,11 @@ namespace SMG
     {
         public static User user;
         public static double difficulty = 1000.00;
+        public static List<Stock> stocks = new List<Stock>();
+
+        public static Form1 mainScreen;
+        public static startScreen startScreen;
+        public static stockMarketScreen smScreen;
         /// <summary>
         /// The main entry point for the application.
         /// </summary>
@@ -18,8 +23,8 @@ namespace SMG
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            var MainForm = new Form1();
-            MainForm.Show();
+            mainScreen = new Form1();
+            mainScreen.Show();
             Application.Run();
         }
     }
