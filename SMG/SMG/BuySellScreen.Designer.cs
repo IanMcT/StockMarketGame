@@ -1,4 +1,4 @@
-﻿namespace SMG
+namespace SMG
 {
     partial class BuySellScreen
     {
@@ -93,6 +93,7 @@
             this.tabPageBuy.Size = new System.Drawing.Size(729, 363);
             this.tabPageBuy.TabIndex = 0;
             this.tabPageBuy.Text = "Buy";
+            this.tabPageBuy.Click += new System.EventHandler(this.tabPageBuy_Click);
             // 
             // label13
             // 
@@ -109,6 +110,7 @@
             this.numBuyQuantity.Name = "numBuyQuantity";
             this.numBuyQuantity.Size = new System.Drawing.Size(394, 20);
             this.numBuyQuantity.TabIndex = 16;
+            this.numBuyQuantity.ValueChanged += new System.EventHandler(this.numBuyQuantity_ValueChanged);
             // 
             // panel1
             // 
@@ -136,6 +138,7 @@
             this.label7.Size = new System.Drawing.Size(35, 13);
             this.label7.TabIndex = 11;
             this.label7.Text = "label4";
+            this.label7.Click += new System.EventHandler(this.label7_Click);
             // 
             // label8
             // 
@@ -154,6 +157,7 @@
             this.label9.Size = new System.Drawing.Size(35, 13);
             this.label9.TabIndex = 9;
             this.label9.Text = "label3";
+            this.label9.Click += new System.EventHandler(this.label9_Click);
             // 
             // label10
             // 
@@ -172,6 +176,7 @@
             this.label11.Size = new System.Drawing.Size(35, 13);
             this.label11.TabIndex = 7;
             this.label11.Text = "label2";
+            this.label11.Click += new System.EventHandler(this.label11_Click);
             // 
             // label12
             // 
@@ -286,6 +291,7 @@
             this.lblOwnedStock.Size = new System.Drawing.Size(35, 13);
             this.lblOwnedStock.TabIndex = 7;
             this.lblOwnedStock.Text = "label5";
+            this.lblOwnedStock.Click += new System.EventHandler(this.lblOwnedStock_Click);
             // 
             // label4
             // 
@@ -340,6 +346,7 @@
             this.lblStockName.Size = new System.Drawing.Size(35, 13);
             this.lblStockName.TabIndex = 1;
             this.lblStockName.Text = "label2";
+            this.lblStockName.Click += new System.EventHandler(this.lblStockName_Click);
             // 
             // label1
             // 
