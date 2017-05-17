@@ -35,6 +35,10 @@ namespace SMG
             this.priceChange = new System.Windows.Forms.DataGridViewImageColumn();
             this.panelOwned = new System.Windows.Forms.Panel();
             this.dgvOwnedStocks = new System.Windows.Forms.DataGridView();
+            this.OwnedStock = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.OwnedCost = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.OwnedPriceChange = new System.Windows.Forms.DataGridViewImageColumn();
+            this.Owned = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panelGraph = new System.Windows.Forms.Panel();
             this.panelInfo = new System.Windows.Forms.Panel();
             this.richTextBox1 = new System.Windows.Forms.RichTextBox();
@@ -48,10 +52,6 @@ namespace SMG
             this.label10 = new System.Windows.Forms.Label();
             this.tbBalance = new System.Windows.Forms.TextBox();
             this.tbDays = new System.Windows.Forms.TextBox();
-            this.OwnedStock = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.OwnedCost = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.OwnedPriceChange = new System.Windows.Forms.DataGridViewImageColumn();
-            this.Owned = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panelStocks.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvStockList)).BeginInit();
             this.panelOwned.SuspendLayout();
@@ -111,6 +111,10 @@ namespace SMG
             // 
             // dgvOwnedStocks
             // 
+            this.dgvOwnedStocks.AllowUserToAddRows = false;
+            this.dgvOwnedStocks.AllowUserToDeleteRows = false;
+            this.dgvOwnedStocks.AllowUserToResizeColumns = false;
+            this.dgvOwnedStocks.AllowUserToResizeRows = false;
             this.dgvOwnedStocks.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvOwnedStocks.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.OwnedStock,
@@ -125,6 +129,29 @@ namespace SMG
             this.dgvOwnedStocks.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvOwnedStocks_CellContentClick);
             this.dgvOwnedStocks.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvOwnedStocks_CellDoubleClick);
             // 
+            // OwnedStock
+            // 
+            this.OwnedStock.HeaderText = "Stock";
+            this.OwnedStock.Name = "OwnedStock";
+            // 
+            // OwnedCost
+            // 
+            this.OwnedCost.HeaderText = "Cost";
+            this.OwnedCost.Name = "OwnedCost";
+            // 
+            // OwnedPriceChange
+            // 
+            this.OwnedPriceChange.HeaderText = "Price Change";
+            this.OwnedPriceChange.Name = "OwnedPriceChange";
+            this.OwnedPriceChange.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.OwnedPriceChange.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            // 
+            // Owned
+            // 
+            this.Owned.HeaderText = "Owned";
+            this.Owned.Name = "Owned";
+            this.Owned.Width = 45;
+            // 
             // panelGraph
             // 
             this.panelGraph.BackColor = System.Drawing.Color.White;
@@ -132,6 +159,7 @@ namespace SMG
             this.panelGraph.Name = "panelGraph";
             this.panelGraph.Size = new System.Drawing.Size(432, 221);
             this.panelGraph.TabIndex = 2;
+            this.panelGraph.Paint += new System.Windows.Forms.PaintEventHandler(this.panelGraph_Paint);
             // 
             // panelInfo
             // 
@@ -249,29 +277,6 @@ namespace SMG
             this.tbDays.ReadOnly = true;
             this.tbDays.Size = new System.Drawing.Size(100, 20);
             this.tbDays.TabIndex = 10;
-            // 
-            // OwnedStock
-            // 
-            this.OwnedStock.HeaderText = "Stock";
-            this.OwnedStock.Name = "OwnedStock";
-            // 
-            // OwnedCost
-            // 
-            this.OwnedCost.HeaderText = "Cost";
-            this.OwnedCost.Name = "OwnedCost";
-            // 
-            // OwnedPriceChange
-            // 
-            this.OwnedPriceChange.HeaderText = "Price Change";
-            this.OwnedPriceChange.Name = "OwnedPriceChange";
-            this.OwnedPriceChange.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.OwnedPriceChange.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            // 
-            // Owned
-            // 
-            this.Owned.HeaderText = "Owned";
-            this.Owned.Name = "Owned";
-            this.Owned.Width = 45;
             // 
             // stockMarketScreen
             // 
