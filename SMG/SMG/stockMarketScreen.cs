@@ -16,6 +16,8 @@ namespace SMG
         //Global Variables
         Bitmap bmpUp = new Bitmap("up.bmp");
         Bitmap bmpDown = new Bitmap("down.bmp");
+        Graph graph;
+        Stock selectedStock;
 
         public stockMarketScreen()
         {
@@ -37,14 +39,13 @@ namespace SMG
             Program.stocks.Add(pear);
             Program.stocks.Add(skybucks);
             //adds rows
-            Program.user.OwnedStocks.Add(guugle.StockName, 2);
             int currentRow = 0;
             foreach (Stock s in Program.stocks)
             {
                 Console.WriteLine(s.ToString());
                 dgvStockList.Rows.Add();
                 dgvStockList.Rows[currentRow].Cells[0].Value = s.StockName;
-                dgvStockList.Rows[currentRow].Cells[1].Value = s.StockReturn;
+                dgvStockList.Rows[currentRow].Cells[1].Value = String.Format("${0:0.00}", s.StockHistory[s.StockHistory.Count - 1]);
                 if (s.isStockUp())
                 {
                     dgvStockList.Rows[currentRow].Cells[2].Value = bmpUp;
@@ -56,6 +57,9 @@ namespace SMG
                 currentRow++;
             }
             LoadPlayerStocks();
+            graph = new Graph();
+            selectedStock = Program.stocks[0];
+            tbDays.Text = Program.user.CurrentDay.ToString();
         }
 
         /// <summary>
@@ -64,7 +68,8 @@ namespace SMG
         public void LoadPlayerStocks()
         {
             //remove all of the current rows in the grid
-            foreach (DataGridViewRow row in dgvOwnedStocks.Rows)
+            dgvOwnedStocks.Rows.Clear();
+            /*foreach (DataGridViewRow row in dgvOwnedStocks.Rows)
             {
                 try
                 {
@@ -75,7 +80,7 @@ namespace SMG
                     //pretend nothing is wrong and move on with life
                     break;
                 }
-            }
+            }*/
             int currentRow = 0;
             //loop through each of the player's owned stocks
             foreach (string s in Program.user.OwnedStocks.Keys)
@@ -93,7 +98,7 @@ namespace SMG
                 //add the stock to the grid
                 dgvOwnedStocks.Rows.Add();
                 dgvOwnedStocks.Rows[currentRow].Cells[0].Value = stockToDisplay.StockName;
-                dgvOwnedStocks.Rows[currentRow].Cells[1].Value = stockToDisplay.StockReturn;
+                dgvOwnedStocks.Rows[currentRow].Cells[1].Value = String.Format("${0:0.00}", stockToDisplay.StockHistory[stockToDisplay.StockHistory.Count - 1]);
                 if (stockToDisplay.isStockUp())
                 {
                     dgvOwnedStocks.Rows[currentRow].Cells[2].Value = bmpUp;
@@ -106,6 +111,8 @@ namespace SMG
 
                 currentRow++;
             }
+
+            tbBalance.Text = String.Format("${0:0.00}", Program.user.Balance);
         }
 
         /// <summary>
@@ -121,6 +128,13 @@ namespace SMG
                /* MessageBox.Show("You clicked " +
                     dgvStockList.Rows[e.RowIndex].Cells[0].Value);*/
                 //draw the graph for the selected stock
+                string selectedStockName = dgvStockList.Rows[e.RowIndex].Cells[0].Value.ToString();
+                foreach(Stock s in Program.stocks){
+                    if(selectedStockName.Equals(s.StockName)){
+                        selectedStock = s;
+                        break;
+                    }
+                }
             }
         }
 
@@ -194,12 +208,12 @@ namespace SMG
         /// <param name="e"></param>
         private void dgvOwnedStocks_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
-            if (e.RowIndex >= 0 && e.RowIndex < dgvStockList.RowCount)
+            if (e.RowIndex >= 0 && e.RowIndex < dgvStockList.RowCount && dgvOwnedStocks.Rows[e.RowIndex].Cells[0].Value != null)
             {
                 Stock clickedStock = null;
                 foreach (Stock s in Program.stocks)
                 {
-                    if (dgvStockList.Rows[e.RowIndex].Cells[0].Value.Equals(s.StockName))
+                    if (dgvOwnedStocks.Rows[e.RowIndex].Cells[0].Value.Equals(s.StockName))
                     {
                         clickedStock = s;
                         break;
@@ -213,6 +227,11 @@ namespace SMG
         private void dgvOwnedStocks_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 
+        }
+
+        private void panelGraph_Paint(object sender, PaintEventArgs e)
+        {
+            graph.Render(selectedStock.StockHistory, panelGraph.Width, panelGraph.Height, e);
         }
     }
 }
